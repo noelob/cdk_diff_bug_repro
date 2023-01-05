@@ -1,0 +1,28 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'software.amazon.awscdk:aws-cdk-lib:2.53.0'
+    implementation 'software.constructs:constructs:[10.0.0,11.0.0)'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.1'
+}
+
+java.sourceCompatibility = JavaVersion.VERSION_17
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Javadoc) {
+    options.encoding = 'UTF-8'
+}
+
+application {
+    mainClass = 'com.example.cdk.ExampleApp'
+}
